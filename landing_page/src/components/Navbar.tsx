@@ -14,9 +14,9 @@ const Navbar = () => {
           </div>
           <div className="flex items-center space-x-8">
             <NavLink href="/inventory">Inventory</NavLink>
-            <NavLink href="#hospitalfinder">Hospital</NavLink>
-            <NavLink href="#ambulance">Ambulance</NavLink>
-            <NavLink href="#appointment">Appointment</NavLink>
+            <NavLink href="/hospitalfinder">Hospital</NavLink>
+            <NavLink href="/ambulance">Ambulance</NavLink>
+            <NavLink href="/appointment">Appointment</NavLink>
           </div>
         </div>
       </div>
