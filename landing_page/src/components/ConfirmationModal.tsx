@@ -41,13 +41,18 @@ export default function ConfirmationModal({
 
         <div className="bg-gray-50 rounded-lg p-4 space-y-2">
           <p className="text-gray-700">
-            <span className="font-medium">Doctor:</span> {bookingDetails.doctorName}
+            <span className="font-medium">Appointment Number:</span> 345
+          </p>
+          <p className="text-gray-700">
+            <span className="font-medium">Doctor:</span>{" "}
+            {bookingDetails.doctorName}
           </p>
           <p className="text-gray-700">
             <span className="font-medium">Time:</span> {bookingDetails.time}
           </p>
           <p className="text-gray-700">
-            <span className="font-medium">Patient:</span> {bookingDetails.patientName}
+            <span className="font-medium">Patient:</span>{" "}
+            {bookingDetails.patientName}
           </p>
           <p className="text-gray-700">
             <span className="font-medium">Phone:</span> {bookingDetails.phone}
