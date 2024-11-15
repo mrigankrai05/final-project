@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import EmergencyForm from "./components/EmergencyForm";
 import AmbulanceList from "./components/AmbulanceList";
 import ConfirmationModal from "./components/ConfirmatioModal";

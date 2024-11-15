@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Toaster, toast } from 'react-hot-toast';
 import { BedList } from './components/BedList';
 import { PatientForm } from './components/PatientForm';
