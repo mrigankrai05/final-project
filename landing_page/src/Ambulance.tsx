@@ -1,25 +1,27 @@
-import React, { useState } from 'react';
-import EmergencyForm from './components/EmergencyForm';
-import AmbulanceList from './components/AmbulanceList';
-import ConfirmationModal from './components/ConfirmationModal';
-import { Siren } from 'lucide-react';
+import React, { useState } from "react";
+import EmergencyForm from "./components/EmergencyForm";
+import AmbulanceList from "./components/AmbulanceList";
+import ConfirmationModal from "./components/ConfirmatioModal";
+import { Siren } from "lucide-react";
 
 // Simulated ambulance data
 const mockAmbulances = [
-  { id: 'A101', distance: 1.2, eta: 5, status: 'available' },
-  { id: 'A102', distance: 2.5, eta: 8, status: 'available' },
-  { id: 'A103', distance: 0.8, eta: 3, status: 'busy' },
-  { id: 'A104', distance: 3.1, eta: 12, status: 'available' },
-];
+  { id: "A101", distance: 1.2, eta: 5, status: "available" },
+  { id: "A102", distance: 2.5, eta: 8, status: "available" },
+  { id: "A103", distance: 0.8, eta: 3, status: "busy" },
+  { id: "A104", distance: 3.1, eta: 12, status: "available" },
+] as const;
 
 function App() {
-  const [step, setStep] = useState<'form' | 'select'>('form');
-  const [selectedAmbulance, setSelectedAmbulance] = useState<string | null>(null);
+  const [step, setStep] = useState<"form" | "select">("form");
+  const [selectedAmbulance, setSelectedAmbulance] = useState<string | null>(
+    null
+  );
   const [showConfirmation, setShowConfirmation] = useState(false);
 
   const handleFormSubmit = (data: any) => {
-    console.log('Form data:', data);
-    setStep('select');
+    console.log("Form data:", data);
+    setStep("select");
   };
 
   const handleAmbulanceSelect = (id: string) => {
