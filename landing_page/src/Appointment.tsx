@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Search, Calendar } from 'lucide-react';
+import { Search, Stethoscope } from "lucide-react";
 import DoctorCard from './components/DoctorCard';
 import BookingModal from './components/BookingModal';
 import ConfirmationModal from './components/ConfirmationModal';
+import Navbar from "./components/Navbar";
 
 const doctors = [
   {
@@ -128,14 +129,7 @@ function Appointments() {
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <header className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <Calendar className="w-6 h-6 text-indigo-600" />
-              <h1 className="text-xl font-semibold text-gray-900">DocSchedule</h1>
-            </div>
-          </div>
-        </div>
+        <Navbar />
       </header>
 
       {/* Main Content */}
@@ -169,7 +163,7 @@ function Appointments() {
               onChange={(e) => setSelectedSpecialty(e.target.value)}
             >
               <option value="all">All Specialties</option>
-              {specialties.sort().map(specialty => (
+              {specialties.sort().map((specialty) => (
                 <option key={specialty} value={specialty.toLowerCase()}>
                   {specialty}
                 </option>
@@ -181,11 +175,7 @@ function Appointments() {
         {/* Doctor List */}
         <div className="grid grid-cols-1 gap-6">
           {filteredDoctors.map((doctor) => (
-            <DoctorCard
-              key={doctor.id}
-              {...doctor}
-              onBooking={handleBooking}
-            />
+            <DoctorCard key={doctor.id} {...doctor} onBooking={handleBooking} />
           ))}
         </div>
       </main>
@@ -194,7 +184,7 @@ function Appointments() {
       <BookingModal
         isOpen={bookingModalOpen}
         onClose={() => setBookingModalOpen(false)}
-        doctorName={doctors.find(d => d.id === selectedDoctor)?.name || ''}
+        doctorName={doctors.find((d) => d.id === selectedDoctor)?.name || ""}
         time={selectedTime}
         onConfirm={handleConfirmBooking}
       />

@@ -7,6 +7,7 @@ import { HospitalCard } from './components/HospitalCard';
 import { Hospital, Patient, Reservation } from './types';
 import { hospitals as initialHospitals } from './data/hospitals';
 import { ArrowLeftIcon } from '@heroicons/react/24/solid';
+import Navbar from "./components/Navbar";
 
 function Bedavailibility() {
   const [hospitals, setHospitals] = useState<Hospital[]>(initialHospitals);
@@ -71,7 +72,7 @@ function Bedavailibility() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Toaster />
+      <Navbar />
       <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-extrabold text-gray-900 mb-4">
@@ -95,11 +96,15 @@ function Bedavailibility() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <div className="bg-white rounded-2xl shadow-sm border border-gray-100">
                 <div className="border-b border-gray-100 p-6">
-                  <h2 className="text-2xl font-bold text-gray-900">{selectedHospital.name}</h2>
-                  <p className="text-sm text-gray-500 mt-1">Click on an available bed to make a reservation</p>
+                  <h2 className="text-2xl font-bold text-gray-900">
+                    {selectedHospital.name}
+                  </h2>
+                  <p className="text-sm text-gray-500 mt-1">
+                    Click on an available bed to make a reservation
+                  </p>
                 </div>
-                <BedList 
-                  beds={selectedHospital.beds} 
+                <BedList
+                  beds={selectedHospital.beds}
                   onSelectBed={handleBedSelect}
                   hospitalName={selectedHospital.name}
                 />
@@ -116,8 +121,10 @@ function Bedavailibility() {
                     }}
                   />
                 ) : (
-                  <ReservationList 
-                    reservations={reservations.filter(r => r.hospitalId === selectedHospital.id)} 
+                  <ReservationList
+                    reservations={reservations.filter(
+                      (r) => r.hospitalId === selectedHospital.id
+                    )}
                   />
                 )}
               </div>

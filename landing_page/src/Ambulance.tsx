@@ -3,6 +3,7 @@ import EmergencyForm from "./components/EmergencyForm";
 import AmbulanceList from "./components/AmbulanceList";
 import ConfirmationModal from "./components/ConfirmatioModal";
 import { Siren } from "lucide-react";
+import Navbar from "./components/Navbar";
 
 // Simulated ambulance data
 const mockAmbulances = [
@@ -31,6 +32,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <Navbar />
       <header className="bg-red-600 text-white py-6 shadow-lg">
         <div className="container mx-auto px-4">
           <div className="flex items-center space-x-3">
